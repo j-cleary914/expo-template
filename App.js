@@ -1,29 +1,11 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import RootNavigator from "./src/navigation/root-navigator";
 
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./src/screens/HomeScreen";
-import DetailsScreen from "./src/screens/DetialsScreen";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faTerminal } from "@fortawesome/pro-solid-svg-icons";
 
-const Stack = createStackNavigator();
+library.add(faTerminal);
 
 export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
+  return <RootNavigator />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
